@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/kreuzerk/HarryPotter-names/issues"
   },
-  "homepage": "https://github.com/kreuzerk/HarryPotter-names#readme"
+  "homepage": "https://github.com/kreuzerk/HarryPotter-names#readme",
+  "dependencies": {
+    "unique-random-array": "^1.0.0"
+  }
 }
