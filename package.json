@@ -4,6 +4,7 @@
   "description": "This project gives you names from the Harry Potter movie",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +25,9 @@
   "homepage": "https://github.com/kreuzerk/HarryPotter-names#readme",
   "dependencies": {
     "unique-random-array": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "eslint-config-kentcdodds": "^11.1.0"
   }
 }
