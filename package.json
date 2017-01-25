@@ -6,7 +6,8 @@
   "scripts": {
     "test": "nyc mocha",
     "watch:test": "mocha --watch",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "validate": "npm-run-all --parallel lint test"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,10 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.14.0",
+    "eslint-config-kentcdodds": "^9.0.0",
+    "ghooks": "^2.0.0",
     "mocha": "^3.2.0",
+    "npm-run-all": "^4.0.1",
     "nyc": "^10.1.2"
   },
   "nyc": {
@@ -46,5 +50,10 @@
     "include": [
       "src"
     ]
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run validate"
+    }
   }
 }
