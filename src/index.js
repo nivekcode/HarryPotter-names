@@ -1,9 +1,10 @@
-'use strict';
+import uniqueRandomArray from 'unique-random-array';
+const harryPotterNames = require('./harryPotter.names.json');
 
-var uniqueRandomArray = require('unique-random-array');
-var harryPotterNames = require('./harryPotter.names.json');
-
-module.exports = {
+const PUBLIC_API = {
     all: harryPotterNames,
     random: uniqueRandomArray(harryPotterNames)
 };
+
+export default PUBLIC_API;
+module.exports = PUBLIC_API;
