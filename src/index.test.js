@@ -29,4 +29,4 @@ describe('Harry Potter names', function () {
             return typeof name === 'string';
         });
     }
-})
+});
