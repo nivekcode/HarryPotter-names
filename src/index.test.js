@@ -1,18 +1,11 @@
 /**
  * Created by kevinkreuzer on 24.01.17.
  */
-'use strict';
-
-var expect = require('chai').expect;
-var assert = require('chai').assert;
-var sut = require('../src/index');
-var allNames = require('../src/harryPotter.names.json');
+import {expect, assert} from 'chai';
+import sut from './index.js';
+const allNames = require('./harryPotter.names.json');
 
 describe('Harry Potter names', function () {
-
-    it('should work', function(){
-        expect(true).to.be.true;
-    });
 
     it('should have a list of all available names', function () {
         expect(isArrayOfStrings(sut.all)).to.be.true;
@@ -20,7 +13,7 @@ describe('Harry Potter names', function () {
     });
 
     it('should allow me to get a random name from the list', function () {
-        var random = sut.random();
+        const random = sut.random();
         expect(allNames).to.include(random);
     });
 
