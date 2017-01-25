@@ -4,7 +4,7 @@
   "description": "This project gives you names from the Harry Potter movie",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "nyc mocha",
     "watch:test": "mocha --watch",
     "lint": "eslint ."
   },
@@ -30,6 +30,21 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.14.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "nyc": "^10.1.2"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100,
+    "statements": 100,
+    "reporter": [
+      "text",
+      "lcov"
+    ],
+    "include": [
+      "src"
+    ]
   }
 }
