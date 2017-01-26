@@ -2,17 +2,17 @@
   "name": "harrypotter-names",
   "version": "1.0.0",
   "description": "This project gives you names from the Harry Potter movie",
-  "main": "dist/index.js",
+  "main": "dist/index.umd.min.js",
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "npm-run-all --parallel build:*",
+    "prebuild:*": "rimraf dist",
+    "build:all": "npm-run-all --parallel build:*",
     "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -production",
     "test": "cross-env NODE_ENV=test nyc mocha",
     "watch:test": "mocha --watch",
     "lint": "eslint .",
-    "validate": "npm-run-all --parallel lint test build"
+    "validate": "npm-run-all --parallel lint test build:umd.min"
   },
   "repository": {
     "type": "git",
