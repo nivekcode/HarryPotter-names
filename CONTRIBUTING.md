@@ -13,4 +13,4 @@ To contribute to the project, please follow these steps:
 9. Run `npm run commit` (**Do not** use `git commit`) - follow the prompts to create your git message
 10. Push your changes with `git push`
 11. Create the Pull Request
-12. Get merged and celebrate 🎉 🎊!
+12. Get merged and celebrate!
