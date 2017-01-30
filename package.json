@@ -1,6 +1,6 @@
 {
   "name": "harrypotter-names",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "This project gives you names from the Harry Potter movie",
   "main": "dist/index.umd.min.js",
   "scripts": {
@@ -13,11 +13,12 @@
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "watch:test": "mocha --watch",
     "lint": "eslint .",
-    "validate": "npm-run-all --parallel lint test build:umd.min"
+    "validate": "npm-run-all --parallel lint test build:umd.min",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kreuzerk/HarryPotter-names.git"
+    "url": "https://github.com/kreuzerk/HarryPotter-names.git"
   },
   "keywords": [
     "Harry",
@@ -54,7 +55,8 @@
     "npm-run-all": "^4.0.1",
     "nyc": "^10.1.2",
     "rimraf": "^2.5.4",
-    "webpack": "1.13.1"
+    "webpack": "1.13.1",
+    "semantic-release": "^6.3.2"
   },
   "nyc": {
     "all": true,
