@@ -14,8 +14,7 @@
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "watch:test": "mocha --watch",
     "lint": "eslint .",
-    "validate": "npm-run-all --parallel lint test build:umd.min",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "validate": "npm-run-all --parallel lint test build:umd.min"
   },
   "repository": {
     "type": "git",
