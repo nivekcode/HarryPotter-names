@@ -10,7 +10,4 @@ script:
   - npm run validate
 after_success:
   - npm run report-coverage
-  branches:
-    only:
-      -master
-      - npm run semantic-release
+  - test $TRAVIS_BRANCH = "master" npm run semantic-release
