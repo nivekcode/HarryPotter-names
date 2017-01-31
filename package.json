@@ -4,6 +4,7 @@
   "description": "This project gives you names from the Harry Potter movie",
   "main": "dist/index.umd.min.js",
   "scripts": {
+    "commit": "git-cz",
     "prebuild:*": "rimraf dist",
     "build:all": "npm-run-all --parallel build:*",
     "build:main": "babel --copy-files --out-dir dist --ignore *.test.js src",
@@ -46,7 +47,9 @@
     "babel-register": "6.11.6",
     "chai": "^3.5.0",
     "codecov": "^1.0.1",
+    "commitizen": "^2.9.5",
     "cross-env": "2.0.0",
+    "cz-conventional-changelog": "^1.2.0",
     "eslint": "^3.14.0",
     "eslint-config-kentcdodds": "^9.0.0",
     "ghooks": "^2.0.0",
@@ -55,8 +58,9 @@
     "npm-run-all": "^4.0.1",
     "nyc": "^10.1.2",
     "rimraf": "^2.5.4",
-    "webpack": "1.13.1",
-    "semantic-release": "^6.3.2"
+    "semantic-release": "^6.3.2",
+    "validate-commit-msg": "^2.11.1",
+    "webpack": "1.13.1"
   },
   "nyc": {
     "all": true,
@@ -91,8 +95,12 @@
     }
   },
   "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    },
     "ghooks": {
-      "pre-commit": "npm run validate"
+      "pre-commit": "npm run validate",
+      "commit-msg": "validate-commit-msg"
     }
   }
 }
