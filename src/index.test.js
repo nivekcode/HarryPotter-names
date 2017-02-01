@@ -3,22 +3,39 @@
  */
 import {expect, assert} from 'chai';
 import sut from './index.js';
-const allNames = require('./harryPotter.names.json');
+const allCharacterNames = require('./harryPotter.charcters.names.json');
+const allBeastNames = require('./harryPotter.beast.names.json');
 
-describe('Harry Potter names', function () {
+describe('Harry Potter Names', function() {
 
-    it('should have a list of all available names', function () {
-        expect(isArrayOfStrings(sut.all)).to.be.true;
-        assert.equal(sut.all, allNames);
+    describe('Harry Potter Character names', () => {
+
+        it('should have a list of all available character names', () => {
+            expect(isArrayOfStrings(sut.all)).to.be.true;
+            assert.equal(sut.all, allCharacterNames);
+        });
+
+        it('should allow me to get a random character name from the list', () => {
+            const random = sut.random();
+            expect(allCharacterNames).to.include(random);
+        });
     });
 
-    it('should allow me to get a random name from the list', function () {
-        const random = sut.random();
-        expect(allNames).to.include(random);
+    describe('Harry Potter Beast names', () => {
+
+        it('should have a list of all available beasts', () => {
+            expect(isArrayOfStrings(sut.allBeasts)).to.be.true;
+            assert.equal(sut.allBeasts, allBeastNames);
+        });
+
+        it('should allow me to get a random beast from the list', () => {
+            const random = sut.randomBeast();
+            expect(allBeastNames).to.include(random);
+        });
     });
 
-    function isArrayOfStrings(array){
-        return array.every(function(name){
+    function isArrayOfStrings(array) {
+        return array.every(function(name) {
             return typeof name === 'string';
         });
     }
