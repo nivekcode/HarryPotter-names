@@ -1,9 +1,12 @@
 import uniqueRandomArray from 'unique-random-array';
-const harryPotterNames = require('./harryPotter.names.json');
+const harryPotterCharacterNames = require('./harryPotter.charcters.names.json');
+const harryPotterBeastNames = require('./harryPotter.beast.names.json');
 
 const PUBLIC_API = {
-    all: harryPotterNames,
-    random: uniqueRandomArray(harryPotterNames)
+    all: harryPotterCharacterNames,
+    random: uniqueRandomArray(harryPotterCharacterNames),
+    allBeasts: harryPotterBeastNames,
+    randomBeast: uniqueRandomArray(harryPotterBeastNames)
 };
 
 export default PUBLIC_API;
